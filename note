@@ -1,0 +1,59 @@
+char *get_next_line(int fd)
+
+fd = reference du fichier
+renvoir un char donc une chaine de caractere
+
+get_next_line est remis a jour a chaque fois
+1ere fois lis la premiere ligne ainsi de suite 
+jusqu a la fin
+
+exemple : 
+fd = exemple.txt
+dans exemple.txt les chaine de caractere
+bonjour
+comment ca va ?
+merci
+
+dans le cas ou il n y a plus rien a lire dans le fichier
+ou en cas d erreur on renvoie NULL
+
+nouvelle notion
+1.read() tete de lecture
+2.variable statique
+3.open()
+
+prototype :
+size_t read(int fildes, void *buf, size_t nbyte)
+read fonctionne comme la petite barre de word qui clignote |
+elle commence avant le premier caractere 
+si nbyte = 5 la barre avance de 5 caractere
+et elle stock ca dans le buffer et elle renvoie le nbr de byte
+qu elle a lu, si tout est bon a la fin du fichier renvoie 0 sinon -1
+
+exemple :
+char *get_next_line(int fd)
+
+file : hello_world
+buf : hello
+nbyte = 5
+return 5
+
+une fois les 5 caractere dans buf il faut les mettre en reserve
+dans une variable
+arriver au bout d une ligne c est \n sinon on continue
+et on met a chaque fois les caractere dans la reserve
+
+puis extraire ce qui a dans la reserve dans une nouvelle
+variable line avec le \n, nettoyer la reserve 
+return (line) = a la ligne final
+
+variable static permet de garder en memoir la ou 
+s est terminer la tete de lecture 
+
+fonction pouvant etre utils
+- strdup
+- strlen
+- strjoin
+- strchr = pour chercher la fin d une ligne donc le \n
+
+
