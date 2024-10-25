@@ -6,12 +6,16 @@
 /*   By: dle-fur <dle-fur@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:58:28 by dle-fur           #+#    #+#             */
-/*   Updated: 2024/10/25 11:52:43 by dle-fur          ###   ########.fr       */
+/*   Updated: 2024/10/25 14:29:34 by dle-fur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 # include <unistd.h>
 # include <stdlib.h>
