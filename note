@@ -51,9 +51,9 @@ variable static permet de garder en memoir la ou
 s est terminer la tete de lecture 
 
 fonction pouvant etre utils
-- strdup
+- strdup = copier la chaine
 - strlen
-- strjoin
+- strjoin = joindre 2 chaine
 - strchr = pour chercher la fin d une ligne donc le \n
 
 
