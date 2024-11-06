@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dle-fur <dle-fur@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 11:18:40 by dle-fur           #+#    #+#             */
-/*   Updated: 2024/11/06 19:17:55 by dle-fur          ###   ########.fr       */
+/*   Created: 2024/11/06 19:43:34 by dle-fur           #+#    #+#             */
+/*   Updated: 2024/11/06 19:46:56 by dle-fur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*read_line(int fd, char *line)
 {
@@ -61,10 +61,12 @@ static char	*next_line(char	*line)
 
 char	*get_next_line(int fd)
 {
-	static char	*new_line;
+	static char	*new_line[FD_MAX];
 	char		*line;
 
-	line = read_line(fd, new_line);
-	new_line = next_line(line);
+	if (fd < 0 || fd >= FD_MAX)
+		return (NULL);
+	line = read_line(fd, new_line[fd]);
+	new_line[fd] = next_line(line);
 	return (line);
 }
