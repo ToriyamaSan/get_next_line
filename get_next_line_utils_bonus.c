@@ -6,7 +6,7 @@
 /*   By: dle-fur <dle-fur@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 19:42:44 by dle-fur           #+#    #+#             */
-/*   Updated: 2024/11/06 19:43:07 by dle-fur          ###   ########.fr       */
+/*   Updated: 2024/11/07 09:06:05 by dle-fur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ char	*ft_strdup(const char *s)
 	char	*dest;
 
 	i = 0;
-	if (s == NULL)
-	{
+	if (s == NULL || !*s)
 		return (NULL);
-	}
 	dest = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (dest == NULL)
 	{

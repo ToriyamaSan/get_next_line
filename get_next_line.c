@@ -6,7 +6,7 @@
 /*   By: dle-fur <dle-fur@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 11:18:40 by dle-fur           #+#    #+#             */
-/*   Updated: 2024/11/06 19:17:55 by dle-fur          ###   ########.fr       */
+/*   Updated: 2024/11/07 09:21:48 by dle-fur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,7 @@ static char	*next_line(char	*line)
 	{
 		return (NULL);
 	}
-	else
-	{
-		next_char++;
-	}
+	next_char++;
 	new_line = ft_strdup(next_char);
 	*next_char = '\0';
 	return (new_line);

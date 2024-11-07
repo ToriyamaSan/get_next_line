@@ -57,13 +57,14 @@ Etape 2 :
 
 Preparer la deuxieme ligne pour la lecture read
 
-static char	*save_line(char	*line)
+static char	*next_line(char	*line)
 
 - next_char sera utilisé pour trouver la position du caractère \n dans la chaîne line
 - new_line sera utilisé pour stocker une nouvelle chaîne de caractères qui commence après \n.
+- next_char avance d'un caractere pour pointer après le \n
 - new_line = ft_strdup(next_char) va copier ce qui se trouve après le \n
 - *next_char = '\0' va couper la chaine et y insert un caractere nul
-- return (new_line) va contenir ce qui se trouve avant la virgule terminer par un '\0'
+- la fonction retourne new_line, la prochaine ligne après \n
 
 -------------------------------------------------------------------------------------------
 
@@ -76,7 +77,7 @@ char	*get_next_line(int fd)
 - fd = fichier.txt a lire
 - variable static est utilisé pour garder en memoire ce qu'il y a dedans, par exemple
   si la variable contient 42 octets, elle va les conserver au prochaine appel
-- line = read_line(fd, new_line) va lire et concatener la premiere ligne
+- line = read_line(fd, new_line) va lire et concatener la premiere ligne jusqu au \n
 - new_line = next_line(line) va préparer la ligne suivante si le fichier en contient
 
 -------------------------------------------------------------------------------------------

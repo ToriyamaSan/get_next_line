@@ -6,7 +6,7 @@
 /*   By: dle-fur <dle-fur@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 19:39:38 by dle-fur           #+#    #+#             */
-/*   Updated: 2024/11/06 19:41:33 by dle-fur          ###   ########.fr       */
+/*   Updated: 2024/11/07 09:23:04 by dle-fur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-
-# include <stdio.h>
 
 char	*get_next_line(int fd);
 //utils//
