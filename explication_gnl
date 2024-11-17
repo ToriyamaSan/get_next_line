@@ -1,7 +1,7 @@
 Fonction get_next_line :
-Permet de lire la prochaine ligne d'un fichier jusqu'a \n ou \0
-La lecture se fait toujours ligne par ligne
-Si nbyte = 3, read avancera de 3 octet
+- Permet de lire la prochaine ligne d'un fichier jusqu'a \n ou \0
+- La lecture se fait toujours ligne par ligne
+- Si nbyte = 3, read avancera de 3 octet
 
 get_next_line.h
 - ajout de la librairie <fcntl.h> qui permet d'utiliser read et open
@@ -19,7 +19,7 @@ Info supplementaire :
 
 -------------------------------------------------------------------------------------------
 
-Etape 1 :
+static char	*read_line(int fd, char *line)
 
 - int fd = descripteur de fichier
 - char line = chaine de caractere qui sera lu
@@ -53,11 +53,9 @@ avec ce code, la premiere ligne sera lu
 
 -------------------------------------------------------------------------------------------
 
-Etape 2 :
+static char	*next_line(char	*line)
 
 Preparer la deuxieme ligne pour la lecture read
-
-static char	*next_line(char	*line)
 
 - next_char sera utilisé pour trouver la position du caractère \n dans la chaîne line
 - new_line sera utilisé pour stocker une nouvelle chaîne de caractères qui commence après \n.
@@ -67,10 +65,6 @@ static char	*next_line(char	*line)
 - la fonction retourne new_line, la prochaine ligne après \n
 
 -------------------------------------------------------------------------------------------
-
-Etape 3 :
-
-Fonction get_next_line
 
 char	*get_next_line(int fd)
 
